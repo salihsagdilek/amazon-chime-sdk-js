@@ -269,7 +269,11 @@ function createLogStreamName(meetingId, attendeeId) {
 function response(statusCode, contentType, body) {
   return {
     statusCode: statusCode,
-    headers: { 'Content-Type': contentType },
+    headers: {
+      'Content-Type': contentType,
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Credentials": true
+    },
     body: body,
     isBase64Encoded: false
   };
